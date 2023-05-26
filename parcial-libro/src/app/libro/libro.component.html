@@ -1,0 +1,44 @@
+<h1>Libros Parcial</h1>
+
+<h2>ingreso de nuevo libro</h2>
+
+<p>ingrese un nuevo libro: </p>
+<form (ngSubmit) = "gLibro(info)" #info="ngForm">
+    <div>
+      <label for="titulo">Título: </label>
+      <input name="titulo" type="text" id="titulo" [(ngModel)]="gLibro.titulo" required>
+
+      <br>
+   
+      <label for="referencia">Referencia: </label>
+      <input name="referencia" type="text"  id="referencia" [(ngModel)]="gLibro.referencia" required>
+    
+      <br>
+    
+      <label for="autor">Autor: </label>
+      <input name="autor" type="text" id="autor" [(ngModel)]="gLibro.autor" required>
+  
+      <br>
+   
+      <label for="precio">Precio: </label>
+      <input name="precio" type="number" id="precio" [(ngModel)]="gLibro.precio" required>
+ 
+        <br>
+  
+      <label for="ubicacion" >Ubicación: </label>
+      <input name="ubicacion" type="text" id="ubicacion" [(ngModel)]="gLibro.ubicacion" required>
+    </div>
+  
+    <button type="submit">Guardar nuevo libro</button>
+  </form>
+
+  <br>
+
+<h2>Listado de libros</h2>
+
+<ul>
+  <li *ngFor="let libro of libros">
+    Título: {{ libro.titulo }} | Referencia: {{ libro.referencia }} | Autor: {{ libro.autor }}
+    | Precio: {{ libro.precio }} | Ubicación: {{ libro.ubicacion }}
+  </li>
+</ul>
